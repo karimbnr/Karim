@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فيسبوك كلون</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>فيسبوك كلون</h1>
+        <div id="loginForm">
+            <div class="form-group">
+                <input type="email" id="email" placeholder="البريد الإلكتروني">
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="كلمة المرور">
+            </div>
+            <div class="form-group">
+                <button onclick="login()">تسجيل الدخول</button>
+            </div>
+            <div class="form-group">
+                <button onclick="showRegisterForm()">إنشاء حساب جديد</button>
+            </div>
+        </div>
+
+        <div id="registerForm" style="display: none;">
+            <div class="form-group">
+                <input type="text" id="username" placeholder="اسم المستخدم">
+            </div>
+            <div class="form-group">
+                <input type="email" id="newEmail" placeholder="البريد الإلكتروني">
+            </div>
+            <div class="form-group">
+                <input type="password" id="newPassword" placeholder="كلمة المرور">
+            </div>
+            <div class="form-group">
+                <button onclick="register()">إنشاء حساب</button>
+            </div>
+            <div class="form-group">
+                <button onclick="showLoginForm()">العودة لتسجيل الدخول</button>
+            </div>
+        </div>
+
+        <div id="chat" style="display: none;">
+            <div class="form-group">
+                <input type="text" id="receiver" placeholder="المستلم">
+            </div>
+            <div class="form-group">
+                <input type="text" id="message" placeholder="اكتب رسالة...">
+            </div>
+            <div class="form-group">
+                <input type="file" id="image" accept="image/*">
+            </div>
+            <div class="form-group">
+                <button onclick="sendMessage()">إرسال</button>
+            </div>
+            <div class="messages" id="messages"></div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
